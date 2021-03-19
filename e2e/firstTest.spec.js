@@ -14,7 +14,7 @@ describe('Login flow test', () => {
     await element(by.id('forgotButton')).tap();
   });
   it('should fill login form', async () => {
-    await element(by.id('emailInput')).typeText('dinukad@gmail.com');
+    await element(by.id('emailInput')).typeText('testing@gmail.com');
     await element(by.id('passwordInput')).typeText('test1245\n');
     await element(by.id('loginButton')).tap();
 
