@@ -158,8 +158,11 @@ commands:
 jobs:
 
   android-test:
-    executor:
-      name: win/default
+    machine: # Specifies a machine image that uses
+      # an Ubuntu version 20.04 image with Docker 19.03.13
+      # and docker-compose 1.27.4, follow CircleCI Discuss Announcements
+      # for new image releases.
+      image: ubuntu-2004:202010-01
     steps:
       - attach_workspace:
           at: .
