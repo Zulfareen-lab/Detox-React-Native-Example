@@ -22,7 +22,7 @@ commands:
     steps:
       - run:
           name: Executing node version check
-          command: node -v
+          command: nvm use --delete-prefix v12.18.4 --silent
       - restore_cache:
           name: Restore npm cache
           key: v1-npm-{{ checksum "./package-lock.json" }}-{{ arch }}
