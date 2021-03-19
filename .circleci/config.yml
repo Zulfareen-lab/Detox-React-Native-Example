@@ -14,15 +14,12 @@ commands:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-            nvm install 14.15.4
+            nvm use --delete-prefix v12.18.4 --silent
             NODE_DIR=$(dirname $(which node))
             echo "export PATH=$NODE_DIR:\$PATH" >> $BASH_ENV
   npm-dependencies:
     description: "Get JavaScript dependencies"
     steps:
-      - run:
-            name: delete prefix
-            command: npm config delete prefix
       - run:
           name: Executing node version check
           command: node -v
