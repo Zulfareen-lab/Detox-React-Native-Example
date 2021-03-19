@@ -52,23 +52,6 @@ commands:
           paths:
             - ./vendor/bundle
 
-  pods-dependencies:
-    description: "Get cocoapods dependencies"
-    steps:
-      - restore_cache:
-          name: Restore cocoapods specs and pods
-          key: v1-cocoapods-{{ checksum "./ios/Podfile.lock" }}-{{ arch }}
-      - run:
-          name: Getting cocoapods dependencies
-          working_directory: ./ios
-          command: bundle exec pod install --deployment
-      - save_cache:
-          name: Save cocoapods specs and pods cache
-          key: v1-cocoapods-{{ checksum "./ios/Podfile.lock" }}-{{ arch }}
-          paths:
-            - ./ios/Pods
-            - ~/.cocoapods
-
   gradle-dependencies:
     description: "Get Gradle dependencies"
     steps:
