@@ -158,8 +158,8 @@ commands:
 jobs:
 
   android-test:
-    macos:
-      xcode: 11.3.1
+    executor:
+      name: win/default
     steps:
       - attach_workspace:
           at: .
